@@ -5,7 +5,9 @@ from django.contrib.auth.models import User
 
 class Movie(models.Model):
     title = models.CharField(max_length=32)
+    image = models.ImageField(upload_to='Images/', default='Images/None/No-img.jpg')
     description = models.CharField(max_length=300)
+
 
 
     def avg_rating(self):
@@ -23,8 +25,6 @@ class Movie(models.Model):
     def no_of_ratings(self):
         all_ratings = Rating.objects.filter(movie=self)
         return len(all_ratings)
-
-
 
 
 class Rating(models.Model):

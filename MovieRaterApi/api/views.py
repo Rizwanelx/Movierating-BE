@@ -11,8 +11,6 @@ from MovieRaterApi.api.serializers import MovieSerializer, RatingSerializer
 from rest_framework.decorators import action
 
 
-
-
 class UserViewSet(viewsets.ModelViewSet):
     queryset = User.objects.all().order_by('-date_joined')
     serializer_class = UserSerializer
