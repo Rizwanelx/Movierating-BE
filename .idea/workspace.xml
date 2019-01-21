@@ -176,7 +176,7 @@
       <workItem from="1547929282239" duration="920000" />
       <workItem from="1547986223789" duration="8700000" />
       <workItem from="1548051496595" duration="1316000" />
-      <workItem from="1548052954321" duration="1029000" />
+      <workItem from="1548052954321" duration="1591000" />
     </task>
     <task id="LOCAL-00001" summary="added password auth">
       <created>1547401851623</created>
@@ -203,7 +203,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="27754000" />
+    <option name="totallyTimeSpent" value="28316000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="784" extended-state="6" />
