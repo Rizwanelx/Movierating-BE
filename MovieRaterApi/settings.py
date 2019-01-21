@@ -54,7 +54,8 @@ MIDDLEWARE = [
 ]
 
 CORS_ORIGIN_WHITELIST = (
-    'localhost:4200'
+    'localhost:4200',
+    'movieratingwebapp.firebaseapp.com'
 )
 CORS_ORIGIN_ALLOW_ALL = False
 
