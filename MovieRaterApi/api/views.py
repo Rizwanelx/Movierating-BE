@@ -22,6 +22,15 @@ class MovieViewSet(viewsets.ModelViewSet):
     authentication_classes = (TokenAuthentication, SessionAuthentication)
     permission_classes = (IsAuthenticated,)
 
+    @action(methods=['post'], detail=False)
+    def upload_docs(request):
+        try:
+            file = request.data['file']
+        except KeyError:
+            response = {"message": "You need to pass all params"}
+            return Response(response, status=status.HTTP_400_BAD_REQUEST)
+            product = Movie.objects.create(image=file)
+
 
 class CustomObtainAuthToken (ObtainAuthToken):
     def post(self, request, *args, **kwargs):

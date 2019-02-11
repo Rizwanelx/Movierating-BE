@@ -21,7 +21,8 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/2.1/howto/deployment/checklist/
 
-ALLOWED_HOSTS = ['movieratingheroku.herokuapp.com']
+ALLOWED_HOSTS = ['movieratingheroku.herokuapp.com',
+                 '127.0.0.1']
 
 SECRET_KEY = config('SECRET_KEY')
 DEBUG = config('DEBUG' , default= False, cast=bool)

@@ -3,11 +3,17 @@ from django.core.validators import MaxValueValidator, MinValueValidator
 from django.contrib.auth.models import User
 
 
+def productFile(instance, filename):
+    return '/'.join(['products', str(instance.id), filename])
+
 class Movie(models.Model):
     title = models.CharField(max_length=32)
-    image = models.ImageField(upload_to='Images/', default='Images/None/No-img.jpg')
-    description = models.CharField(max_length=300)
-
+    image = models.ImageField( upload_to= productFile, max_length=254, blank=True, null=True)
+    description = models.CharField(max_length=300, default='SOME STRING')
+    fantasy = models.CharField(max_length=32, default='SOME STRING')
+    romance = models.CharField(max_length=32, default='SOME STRING')
+    action = models.CharField(max_length=32, default='SOME STRING')
+    director = models.CharField(max_length=32, default='SOME STRING')
 
 
     def avg_rating(self):
@@ -25,6 +31,9 @@ class Movie(models.Model):
     def no_of_ratings(self):
         all_ratings = Rating.objects.filter(movie=self)
         return len(all_ratings)
+
+    def productFile(instance, filename):
+        return '/'.join(['products', str(instance.id), filename])
 
 
 class Rating(models.Model):

@@ -15,11 +15,10 @@ class UserSerializer(serializers.HyperlinkedModelSerializer):
 
 
 class MovieSerializer(serializers.ModelSerializer):
-    image = serializers.ImageField(max_length=None, use_url=True)
 
     class Meta:
         model = Movie
-        fields = ( 'id','title', 'description', 'avg_rating', 'no_of_ratings','image')
+        fields = ('id', 'title', 'description','image', 'avg_rating', 'no_of_ratings','image','fantasy','romance','action','director')
 
 
 class RatingSerializer(serializers.ModelSerializer):
